@@ -1,0 +1,20 @@
+import React from 'react';
+import classes from './Layout.module.css';
+import MainNavigation from './MainNavigation';
+
+// Layout Component that Is a WRAPPER for APP Component. To set the width, maxWidth, margin of our App.
+// Contains a reusable MainNavigation (Navbar) Component.
+
+const Layout = (props) => {
+  return (
+    <div>
+      {/* Navbar */}
+      <MainNavigation />
+
+      {/* This main element is rendering the APP Component as children through the props object. */}
+      <main className={classes.main}>{props.children}</main>
+    </div>
+  );
+};
+
+export default Layout;

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
 
+// Main Navbar that is rendered in Layout Wrapper component.
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
