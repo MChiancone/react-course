@@ -22,6 +22,8 @@ const DUMMY_DATA = [
 ];
 
 // Renders a MeetupListComponent and passes props as meetups(DummyData) to MeetupListComponent which will render a list of the dummy data as MeetupItemComponents for each item in the list.
+// Where is the data coming from?
+// ---Currently: from DUMMY_DATA
 
 const AllMeetupsPage = () => {
   return (
