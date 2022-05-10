@@ -18,7 +18,7 @@ import classes from './NewMeetupForm.module.css';
 //
 // NewMeetupForm Component - that is used in NewMeetup Page Component & rendered
 // by the NewMeetupPage Component.
-const NewMeetupForm = () => {
+const NewMeetupForm = (props) => {
   //
   // Set variables = useRef Object for use on HTML Input Element.
   // This creates a useRef() object and stores it in a variable.
@@ -46,7 +46,7 @@ const NewMeetupForm = () => {
       description: enteredDescription,
     };
     //Log to console just to test, eventually send to server
-    console.log(meetupData);
+    props.onAddMeetup(meetupData);
   }
 
   return (

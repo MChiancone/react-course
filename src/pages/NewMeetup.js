@@ -1,3 +1,5 @@
+import { useHistory } from 'react-router-dom';
+
 import React from 'react';
 import NewMeetupForm from '../components/meetups/NewMeetupForm';
 
@@ -8,10 +10,24 @@ import NewMeetupForm from '../components/meetups/NewMeetupForm';
 // Take input from User and post to server. Then use that userCreatedData and render it on AllMeetupsPage
 
 const NewMeetupPage = () => {
+  const history = useHistory();
+
+  function addMeetupHandler(meetupData) {
+    fetch('https://react-course-26342-default-rtdb.firebaseio.com/.json', {
+      method: 'POST',
+      body: JSON.stringify(meetupData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(() => {
+      history.replace('/');
+    });
+  }
+
   return (
     <section>
       <h1>Add New Meetup</h1>
-      <NewMeetupForm />
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
     </section>
   );
 };
